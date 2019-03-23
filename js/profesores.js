@@ -10,6 +10,7 @@ function iniciarSesion(){
         if(loginXHR.status == 200 && loginXHR.readyState == 4){
             console.log(JSON.parse(loginXHR.responseText));
             if (loginXHR.responseText != '0'){
+                localStorage.setItem('idProfesor', JSON.parse(loginXHR.responseText).idProfesor);
                 alert('Exito, '+ JSON.parse(loginXHR.responseText).Nombre);
             }
 
@@ -34,4 +35,12 @@ function getMaterias(){
              }
         }
     }
+}
+
+function getGrupos(){
+    var idP = localStorage.getItem('idProfesor');
+    gruposXHR = new XMLHttpRequest();
+    gruposXHR.open('GET', 'http://127.0.0.1:81/Hackathon2019/Cursos/getGrupos?idProfesor=' + idP);
+    gruposXHR.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    gruposXHR.send();
 }
