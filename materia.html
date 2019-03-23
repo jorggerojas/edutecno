@@ -18,7 +18,7 @@
 
 
 </head>   
-<body>
+<body onload="getMaterias()">
 
     <div id="myModal" class="modal fade" role="dialog">
       <div class="modal-dialog">
@@ -54,7 +54,7 @@
 
     <div class="wrapper" id="wrapper">
         <div class="content col-xs-12" id="content">
-            <div class="contenedor">
+            <div class="contenedor" id="materias">
             	<ol class="breadcrumb bread col-xs-12">
 	                <li><a>Grupos</a></li>
                     <li><a>2 ° A</a></li>
@@ -64,40 +64,6 @@
                     <button class="btmodal" data-toggle="modal" data-target="#myModal" onclick="getAllMaterias()"><i class="fas fa-plus"></i> Agregar materia</button>
                 </div>
 
-                <div class="col-xs-12 col-sm-12 col-md-3 materia flex-vertical español" onclick="alumnoMateria()">
-                    <img src="img/español.png">
-                    <p>Español</p>
-                </div>
-
-                <div class="col-xs-12 col-sm-12 col-md-3 materia flex-vertical mate" onclick="alumnoMateria()">
-                	<img src="img/matematicas.png">
-                    <p>Matemáticas</p>
-                </div>
-
-                <div class="col-xs-12 col-sm-12 col-md-3 materia flex-vertical lengua" onclick="alumnoMateria()">
-                    <img src="img/lengua.png">
-                    <p>Segunda lengua</p>
-                </div>
-
-                <div class="col-xs-12 col-sm-12 col-md-3 materia flex-vertical ciencias" onclick="alumnoMateria()">
-                    <img src="img/ciencias.png">
-                    <p>Ciencias Naturales</p>
-                </div>
-
-                <div class="col-xs-12 col-sm-12 col-md-3 materia flex-vertical historia" onclick="alumnoMateria()">
-                    <img src="img/historia.png">
-                    <p>Historia</p>
-                </div>
-
-                <div class="col-xs-12 col-sm-12 col-md-3 materia flex-vertical geografia" onclick="alumnoMateria()">
-                    <img src="img/geografia.png">
-                    <p>Geografía</p>
-                </div>
-
-                <div class="col-xs-12 col-sm-12 col-md-3 materia flex-vertical formacion" onclick="alumnoMateria()">
-                    <img src="img/formacion.png">
-                    <p>Formación Cívica y Ética</p>
-                </div>
             </div>
         </div>
     </div>
