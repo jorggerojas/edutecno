@@ -11,6 +11,8 @@ function iniciarSesion() {
             console.log(JSON.parse(loginXHR.responseText));
             if (loginXHR.responseText != '0') {
                 localStorage.setItem('idProfesor', JSON.parse(loginXHR.responseText).idProfesor);
+                localStorage.setItem('nombreProfesor', JSON.parse(loginXHR.responseText).Nombre + JSON.parse(loginXHR.responseText).Apellido);
+                
                 alert('Exito, ' + JSON.parse(loginXHR.responseText).Nombre);
             }
 
@@ -48,7 +50,8 @@ function getGrupos() {
     gruposXHR.onreadystatechange = function () {
        
         if (gruposXHR.readyState == 4 && gruposXHR.status == 200) {
-            
+           
+            document.getElementById('nombre').innerHTML = localStorage.getItem('nombreProfesor');
             var grupos = JSON.parse(gruposXHR.responseText);
             console.log(grupos);
             for (var i = 0; i < grupos.length; i++) {
@@ -72,6 +75,7 @@ function getMaterias(idG) {
     materiasXHR.onreadystatechange = function () {
         if (materiasXHR.readyState == 4 && materiasXHR.status == 200) {
             var materias = JSON.parse(materiasXHR.responseText);
+            document.getElementById('nombre').innerHTML = localStorage.getItem('nombreProfesor');
             console.log(materias)
           
             for(var i = 0 ; i < materias.length; i ++ ){
