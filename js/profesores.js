@@ -84,6 +84,7 @@ function getMaterias(idG) {
                 '<p>'+materias[i].NombreMateria+'</p>'+
            ' </div>';
                 document.getElementById('materias').innerHTML += materia;
+                localStorage.setItem('idCurso', materias[i].idCurso);
             }
             document.getElementById('grupo').innerHTML = materias[0].Grupo;
         }
@@ -136,11 +137,10 @@ function actividadesA(idA){
 
 function verActividades(){
     var alumno = localStorage.getItem('idAlumno');
-    var grupo = localStorage.getItem('idGrupo');
-    var profe = localStorage.getItem('idProfesor');
+    var curso = localStorage.getItem('idCurso');
 
     actividadesXHR = new XMLHttpRequest();
-    actividadesXHR.open('GET', 'http://127.0.0.1:81/Hackathon2019/Actividades/getActividadMateria?idProfesor='+profe+'&idGrupo='+grupo+'&idAlumno='+alumno);
+    actividadesXHR.open('GET', 'http://127.0.0.1:81/Hackathon2019/Actividades/getActividadMateria?idCurso='+curso+'&idAlumno='+alumno);
     actividadesXHR.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     actividadesXHR.send();
     
@@ -150,31 +150,31 @@ function verActividades(){
             //console.log('hola');
             var actividades = JSON.parse(actividadesXHR.responseText);
              //console.log(actividades['res']);
-             for(var i = 0; i < actividades['res'].length; i++){
+             for(var i = 0; i < actividades.length; i++){
                  console.log('1')
                  var actividad = ' <div class="col-xs-12 col-sm-3 col-md-3 actividad flex-vertical" id="actividad">'+
                 ' <b>Calificación</b>'+
                 ' <div class="circle verde">'+
-                    ' <p>'+actividades["res"][i].Calificacion+'</p>'+
+                    ' <p>'+actividades[i].calificacion+'</p>'+
                 ' </div>'+
-                 '<h2 id="titulo-act">'+actividades["act"][i].NombreActividad+'</h2>'+
+                 '<h2 id="titulo-act">'+actividades[i].NombreActividad+'</h2>'+
                 ' <div class="col-xs-12">'+
                      '<b>Materia: </b>'+
-                     '<p id="materia">'+actividades["act"][i].NombreMateria+'</p>'+
+                     '<p id="materia">'+actividades[i].nombreMateria+'</p>'+
                  '</div>'+
 
                  '<div class="col-xs-12">'+
                     ' <b>Descripción: </b>'+
-                     '<p id="descripcion">'+actividades["act"][i].Descripcion+'</p>'+
+                     '<p id="descripcion">'+actividades[i].Descripcion+'</p>'+
                  '</div>'+
                 ' <div class="col-xs-12">'+
                      '<b>Área de conocimiento:</b>'+
-                     '<p id="area">'+actividades["act"][i].NombreArea+'</p>'+
+                     '<p id="area">'+actividades[i].nombreArea+'</p>'+
                 ' </div>'+
 
                 ' <div class="col-xs-12">'+
                     ' <b>Comentario:</b>'+
-                     '<p id="comentario">'+actividades["res"][i].Comentario+'</p>'+
+                     '<p id="comentario">'+actividades[i].comentario+'</p>'+
                  '</div>'+
              '</div>';
                  document.getElementById('actividades').innerHTML += actividad;
