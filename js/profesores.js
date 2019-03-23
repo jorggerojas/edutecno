@@ -52,7 +52,7 @@ function getGrupos() {
             var grupos = JSON.parse(gruposXHR.responseText);
             console.log(grupos);
             for (var i = 0; i < grupos.length; i++) {
-                var grupo = ' <div class="col-xs-12 col-sm-6 col-md-3 grupo flex">' +
+                var grupo = ' <div class="col-xs-12 col-sm-6 col-md-3 grupo flex" onclick=pMateria('+grupos[i].idGrupo+')>' +
                     '<p>' + grupos[i].Grupo + '</p>' +
                     '</div>';
                     localStorage.setItem('idGrupo', grupos[i].idGrupo);
@@ -62,7 +62,7 @@ function getGrupos() {
     }
 }
 
-function getMaterias() {
+function getMaterias(idG) {
     var idP = localStorage.getItem('idProfesor');
     var idG = localStorage.getItem('idGrupo');
     materiasXHR = new XMLHttpRequest();
@@ -73,6 +73,7 @@ function getMaterias() {
         if (materiasXHR.readyState == 4 && materiasXHR.status == 200) {
             var materias = JSON.parse(materiasXHR.responseText);
             console.log(materias)
+          
             for(var i = 0 ; i < materias.length; i ++ ){
                 var materia =  '<div class="col-xs-12 col-sm-12 col-md-3 materia flex-vertical español" onclick="alumnoMateria()">'+
                 '<img src="'+materias[i].Media+'">'+
@@ -80,6 +81,12 @@ function getMaterias() {
            ' </div>';
                 document.getElementById('materias').innerHTML += materia;
             }
+            document.getElementById('grupo').innerHTML = materias[0].Grupo;
         }
     }
+}
+
+function pMateria(idG){
+    localStorage.setItem('idGrupo', idG);
+    window.location = 'materia.html';
 }
