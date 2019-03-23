@@ -11,11 +11,12 @@
 	<script src="js/jquery.min.js"></script>
     <script src="css/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/function.js"></script>
+    <script type="text/javascript" src="js/profesores.js"></script>
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>   
-<body>
+<body onload="verActividades()">
 
     <div id="myModal" class="modal fade" role="dialog">
       <div class="modal-dialog">
@@ -51,7 +52,7 @@
 
     <div class="wrapper" id="wrapper">
         <div class="content col-xs-12" id="content">
-            <div class="contenedor">
+            <div class="contenedor" id="actividades">
                 <ol class="breadcrumb bread col-xs-12">
                     <li><a>Actividades por materia de </a><b>Fernando Rincón</b></li>
                 </ol>

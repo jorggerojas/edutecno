@@ -109,16 +109,17 @@ function getAlumnosMateria(){
     materiasAlumnosHXR.open('GET', 'http://127.0.0.1:81/Hackathon2019/Alumnos/getAlumnosMaterias?idProfesor=' + idP + '&idGrupo=' + idG+'&idMateria='+ idM);
     materiasAlumnosHXR.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     materiasAlumnosHXR.send();
-    console.log('alumno');
+    
     materiasAlumnosHXR.onreadystatechange= function(){
         if (materiasAlumnosHXR.status == 200 && materiasAlumnosHXR.readyState == 4){
+            
             
             var alumnos = JSON.parse(materiasAlumnosHXR.responseText);
 
             for(var i = 0; i<alumnos.length; i++){
                 var alumno =  '<div class="col-xs-12 col-sm-5 col-md-5 alumno flex between" id="alumno">'+
                 '<h2>'+alumnos[i].Nombre+' '+alumnos[i].Apellidos+'</h2>'+
-               ' <i class="far fa-file" data-title="Actividades"></i>'+
+               ' <i onclick="actividadesA('+alumnos[i].idAlumno+')" class="far fa-file" data-title="Actividades"></i>'+
             '</div>';
             
                 document.getElementById('alumnos').innerHTML += alumno;
@@ -126,4 +127,58 @@ function getAlumnosMateria(){
         }
     }
 
+}
+
+function actividadesA(idA){
+    localStorage.setItem('idAlumno', idA);
+    window.location = 'actividades.html';
+}
+
+function verActividades(){
+    var alumno = localStorage.getItem('idAlumno');
+    var grupo = localStorage.getItem('idGrupo');
+    var profe = localStorage.getItem('idProfesor');
+
+    actividadesXHR = new XMLHttpRequest();
+    actividadesXHR.open('GET', 'http://127.0.0.1:81/Hackathon2019/Actividades/getActividadMateria?idProfesor='+profe+'&idGrupo='+grupo+'&idAlumno='+alumno);
+    actividadesXHR.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    actividadesXHR.send();
+    
+    actividadesXHR.onreadystatechange = function(){
+        console.log(actividadesXHR.status)
+        if(actividadesXHR.readyState == 4 && actividadesXHR.status == 200){
+            //console.log('hola');
+            var actividades = JSON.parse(actividadesXHR.responseText);
+             //console.log(actividades['res']);
+             for(var i = 0; i < actividades['res'].length; i++){
+                 console.log('1')
+                 var actividad = ' <div class="col-xs-12 col-sm-3 col-md-3 actividad flex-vertical" id="actividad">'+
+                ' <b>Calificación</b>'+
+                ' <div class="circle verde">'+
+                    ' <p>'+actividades["res"][i].Calificacion+'</p>'+
+                ' </div>'+
+                 '<h2 id="titulo-act">'+actividades["act"][i].NombreActividad+'</h2>'+
+                ' <div class="col-xs-12">'+
+                     '<b>Materia: </b>'+
+                     '<p id="materia">'+actividades["act"][i].NombreMateria+'</p>'+
+                 '</div>'+
+
+                 '<div class="col-xs-12">'+
+                    ' <b>Descripción: </b>'+
+                     '<p id="descripcion">'+actividades["act"][i].Descripcion+'</p>'+
+                 '</div>'+
+                ' <div class="col-xs-12">'+
+                     '<b>Área de conocimiento:</b>'+
+                     '<p id="area">'+actividades["act"][i].NombreArea+'</p>'+
+                ' </div>'+
+
+                ' <div class="col-xs-12">'+
+                    ' <b>Comentario:</b>'+
+                     '<p id="comentario">'+actividades["res"][i].Comentario+'</p>'+
+                 '</div>'+
+             '</div>';
+                 document.getElementById('actividades').innerHTML += actividad;
+            }
+        }
+    }
 }
