@@ -123,6 +123,18 @@ html, body{
 		color: var(--blanco);
 		margin: 10px 0;
 	}
+	.tipo button{
+		float: left;
+		position: relative;
+		width: 20%;
+		height: 30px;
+		background: var(--blanco);
+		border: none;
+		margin: 5px 0;
+		border-radius: 5px;
+		margin-top: 15px;
+		color: var(--naranja);
+	}
 
 .datos{
 	float: left;
@@ -132,10 +144,10 @@ html, body{
 	box-sizing: border-box;
 }
 	.datos p{
-		font-size: 1.2em;
+		font-size: 1em;
 		margin: 10px 0;
 	}
-	.datos h1{
+	.datos h1{border-right: 
 		font-weight: 300;
 		font-size: 1.2em;
 		float: left;
@@ -148,4 +160,15 @@ html, body{
 		padding: 2px;
 		box-sizing: border-box;
 		outline: none;
+	}
+	.datos button{
+		float: left;
+		position: relative;
+		width: 20%;
+		height: 30px;
+		background: var(--naranja);
+		border: none;
+		margin-top: 20px !important;
+		border-radius: 5px;
+		color: var(--blanco);
 	}

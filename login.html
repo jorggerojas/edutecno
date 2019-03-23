@@ -13,6 +13,7 @@
     <script src="css/bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/function.js"></script>
 	<script type="text/javascript" src="js/profesores.js"></script>
+	<script type="text/javascript" src="js/pradres.js"></script>
     <!-- Font -->
     <link href="css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 </head>   
@@ -37,6 +38,8 @@
 
 				<p>contraseña</p>
 				<input type="password" name="" id="password" class="col-xs-12 col-md-5">
+
+				<button onclick="iniciarSesion()">Ingresar</button>
 			</div>
 
 			<div class="col-xs-12 col-md-6 datos flex">
@@ -44,17 +47,13 @@
 					<h1>Sesión para padres de familia</h1>
 				</div>
 
-				<p>año escolar</p>
-				<input type="date" name="" id="escolar" class="col-xs-12 col-md-5">
-
 				<p>clave de hijo</p>
 				<input type="password" name="" id="clave" class="col-xs-12 col-md-5">
 
-				<p>nombre completo</p>
-				<input type="text" name="" id="nomc" class="col-xs-12 col-md-5">
-
 				<p>fecha de nacimiento</p>
 				<input type="date" name="" id="nac" class="col-xs-12 col-md-5">
+
+				<button onclick="iniciarSesionP()">Ingresar</button>
 			</div>
 
 		</div>
