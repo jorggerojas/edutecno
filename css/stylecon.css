@@ -53,6 +53,10 @@ body, html{
     justify-content: flex-start !important;
 }
 
+.end{
+    justify-content: flex-end !important;
+}
+
 .space{
     justify-content: space-around !important;
 }
@@ -82,6 +86,26 @@ p, h1, h2, h3, h4{
     cursor: default;
 }
 
+.modal{
+    z-index: 99999999 !important;
+}
+    .btmodal{
+        height: 35px;
+        border: none;
+        padding: 5px;
+        box-sizing: border-box;
+        border-radius: 5px;
+        background: var(--naranja);
+        color: var(--blanco);
+        outline: none !important;
+    }
+    .semodal{
+        height: 30px;
+        width: 50%;
+        border-radius: 5px;
+        outline: none !important;
+        cursor: pointer;
+    }
 
 /*Navbar*/
 .barra{
