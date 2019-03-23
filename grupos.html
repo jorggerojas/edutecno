@@ -11,13 +11,14 @@
 	<script src="js/jquery.min.js"></script>
     <script src="css/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/function.js"></script>
+    <script type="text/javascript" src="js/profesores.js"></script>
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
 
 </head>   
-<body>
+<body onload="getGrupos()">
 
 	<div class="barra">
         <h2 class="titulo">Edutecno</h2>
@@ -30,22 +31,11 @@
 
     <div class="wrapper" id="wrapper">
         <div class="content col-xs-12" id="content">
-            <div class="contenedor">
+            <div class="contenedor" id="grupos">
             	<ol class="breadcrumb bread col-xs-12">
 	                <li><a>Grupos</a></li>
 	            </ol>
 
-                <div class="col-xs-12 col-sm-6 col-md-3 grupo flex">
-                	<p>2 ° A</p>
-                </div>
-
-                <div class="col-xs-12 col-sm-6 col-md-3 grupo flex">
-                	<p>2 ° C</p>
-                </div>
-
-                <div class="col-xs-12 col-sm-6 col-md-3 grupo flex">
-                	<p>1 ° A</p>
-                </div>
             </div>
         </div>
     </div>
