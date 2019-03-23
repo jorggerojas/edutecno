@@ -12,6 +12,10 @@
     --historia: #F89C3D;
     --geografia: #F3712A;
     --formacion: #C65925;
+    --verde: #5CED32;
+    --rojo: #FA051E;
+    --amarillo: #F8DA07;
+
 }
 
 *{
@@ -146,6 +150,14 @@ textarea::-webkit-outer-spin-button {
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
     color: rgba(0,0,0,.5);
+}
+
+.back{
+    border: none;
+    background: none;
+    font-size: .9em;
+    margin-bottom: 5px;
+    color: rgba(0,0,0,.6);
 }
 
 /*Navbar*/
@@ -403,7 +415,8 @@ textarea::-webkit-outer-spin-button {
             box-sizing: border-box;
         }
             .alumno h2{
-                font-size: 1.4em;
+                width: auto;
+                font-size: 1.2em;
                 float: left;
                 position: relative;
                 margin-top: 0px !important;
@@ -414,6 +427,73 @@ textarea::-webkit-outer-spin-button {
                 position: relative;
                 margin-left: 10px;
                 cursor: pointer;;
+            }
+            .alumno input{
+                outline: none;
+                padding: 3px;
+                box-sizing: border-box;
+                border-radius: 5px;
+                border: 1px solid rgba(0,0,0,.2);
+                float: left;
+                position: relative;
+                width: 100px;
+            }
+
+        .titulo-act{
+            font-size: 1.5em !important;
+            text-align: center;
+            color: var(--negro);
+            padding-top: 10px !important;
+            box-sizing: border-box;
+        }
+        .actividad{
+            height: auto;
+            float: left;
+            position: relative;
+            margin-left: 6%;
+            margin-top: 20px;
+            border: 2px solid var(--fondo);
+            border-radius: 5px;
+            overflow: hidden !important;
+            color: var(--negro);
+            text-align: justify;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+            .circle{
+                border-radius: 50%;
+                float: left;
+                position: relative;
+                width: 100px;
+                height: 100px;
+                padding: 20px;
+                font-weight: bold;
+                font-size: 3em;
+                color: var(--blanco);
+            }
+            
+            .verde{
+                background: var(--verde);
+            }
+            .rojo{
+                background: var(--rojo);
+            }
+            .amarillo{
+                background: var(--amarillo);
+            }
+            .actividad h2{
+                font-size: 1.4em;
+            }
+            .actividad b{
+                float: left;
+                position: relative;
+                line-height: 32px;
+            }
+            .actividad p{
+                font-size: 1em;
+                margin: 5px;
+                float: left;
+                position: relative;
             }
         /*.contenedor #tabla{
             margin: 10px 0;
@@ -547,6 +627,12 @@ textarea::-webkit-outer-spin-button {
             font-size: 1.2em;
         }
     .alumno{
+        margin-left: 0% !important;
+    }
+        .alumno h2{
+            font-size: .8em;
+        }
+    .actividad{
         margin-left: 0% !important;
     }
 }

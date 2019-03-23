@@ -16,3 +16,6 @@ function getAreas() {
     }
 }
 
+function goBack() {
+    window.history.back();
+}

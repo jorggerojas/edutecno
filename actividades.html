@@ -53,19 +53,33 @@
         <div class="content col-xs-12" id="content">
             <div class="contenedor">
                 <ol class="breadcrumb bread col-xs-12">
-                    <li><a>Actividades</a></li>
+                    <li><a>Actividades por materia de </a><b>Fernando Rincón</b></li>
                 </ol>
 
-                <div class="col-xs-12 end flex nopadding">
-                    <button class="btmodal" data-toggle="modal" data-target="#myModal" onclick="getAllMaterias()"><i class="fas fa-plus"></i> Agregar comentario</button>
-                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3 actividad flex-vertical" id="actividad">
+                    <b>Calificación</b>
+                    <div class="circle verde">
+                        <p>10</p>
+                    </div>
+                    <h2 id="titulo-act"></h2>
+                    <div class="col-xs-12">
+                        <b>Materia: </b>
+                        <p id="materia"></p>
+                    </div>
 
-                <h1 id="titulo-act" class="titulo-act col-xs-12">Lectura rápida de 5 minutos</h1>
+                    <div class="col-xs-12">
+                        <b>Descripción: </b>
+                        <p id="descripcion"></p>
+                    </div>
+                    <div class="col-xs-12">
+                        <b>Área de conocimiento:</b>
+                        <p id="area"></p>
+                    </div>
 
-                <div class="col-xs-12 col-sm-5 col-md-5 alumno flex between" id="alumno">
-                    <h2>Jorge Luis Rojas Arco</h2>
-                    <input type="number" max="2" placeholder="Calificación" onKeyDown="if(this.value.length==4) return false;">
-                    <i class="far fa-comment" title="Comentario"></i>
+                    <div class="col-xs-12">
+                        <b>Comentario:</b>
+                        <p id="comentario"></p>
+                    </div>
                 </div>
             </div>
         </div>
