@@ -255,9 +255,10 @@ textarea::-webkit-outer-spin-button {
             }
             .cuenta i{
                 color: var(--blanco);
-                font-size: 1.6em;
+                font-size: 1.2em;
                 border-radius: 50%;
-                margin-right: 5px;
+                margin-left: 5px;
+                cursor: pointer;
             }
 /*Contenido*/
 #content{
