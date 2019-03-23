@@ -17,3 +17,21 @@ function iniciarSesion(){
        
     }
 }
+
+function getMaterias(){
+    materiasXHR = new XMLHttpRequest();
+    materiasXHR.open('GET', 'http://127.0.0.1:81/Hackathon2019/Materias/mostrarAllMateria');
+    materiasXHR.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    materiasXHR.send();
+    materiasXHR.onreadystatechange = function(){
+        if(materiasXHR.readyState == 4 && materiasXHR.status == 200){
+          
+             var materias = JSON.parse(materiasXHR.responseText);
+             for(var i = 0; i < materias.length ; i++){
+                //obtiene todas las materias, falta concatenar la variable al select
+                var opcionesMaterias = "<option value="+materias[i].NombreMateria+">"+materias[i].NombreMateria+"</option>";
+                console.log(opcionesMaterias);
+             }
+        }
+    }
+}
