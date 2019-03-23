@@ -86,6 +86,17 @@ p, h1, h2, h3, h4{
     cursor: default;
 }
 
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none !important; 
+  margin: 0 !important; 
+}
+textarea::-webkit-inner-spin-button, 
+textarea::-webkit-outer-spin-button { 
+  -webkit-appearance: none !important; 
+  margin: 0 !important; 
+}
+
 .modal{
     z-index: 99999999 !important;
 }
@@ -106,6 +117,36 @@ p, h1, h2, h3, h4{
         outline: none !important;
         cursor: pointer;
     }
+    .pmodal{
+        margin-bottom: 0px !important;
+        margin-top: 10px;
+        color: rgba(0,0,0,.5);
+        font-size: .9em;
+    }
+    .inmodal{
+        width: 100%;
+        height: 30px;
+        border: none;
+        padding: 5px;
+        box-sizing: border-box;
+        border-radius: 5px;
+        border: 1px solid rgba(0,0,0,.3);
+        outline: none !important;
+        margin-bottom: 2px;
+        resize: none;
+    }
+        .inmodal[target] {
+          background-color: yellow;
+        }
+
+/*Toltip*/
+[data-title]:hover:before{
+    content: attr(data-title);
+    bottom: -10px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: rgba(0,0,0,.5);
+}
 
 /*Navbar*/
 .barra{
@@ -349,6 +390,30 @@ p, h1, h2, h3, h4{
             .materia img{
                 height: 90px;
             }
+        .alumno{
+            height: auto;
+            float: left;
+            position: relative;
+            margin-top: 20px;
+            background: var(--fondo);
+            border-radius: 5px;
+            margin-left: 5%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+            .alumno h2{
+                font-size: 1.4em;
+                float: left;
+                position: relative;
+                margin-top: 0px !important;
+                margin-bottom: 0px !important;
+            }
+            .alumno i{
+                float: left;
+                position: relative;
+                margin-left: 10px;
+                cursor: pointer;;
+            }
         /*.contenedor #tabla{
             margin: 10px 0;
             padding-right: 0px !important;
@@ -480,6 +545,9 @@ p, h1, h2, h3, h4{
         .materia p{
             font-size: 1.2em;
         }
+    .alumno{
+        margin-left: 0% !important;
+    }
 }
 
 @media (max-width: 800px) {

@@ -17,6 +17,63 @@
 </head>   
 <body>
 
+    <div id="myModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Agregar actividad</h4>
+          </div>
+          <div class="modal-body">
+            <p>Rellene los campos solicitados</p>
+
+            <p class="pmodal">Título de actividad:</p>
+            <input type="text" placeholder="" class="inmodal">
+
+            <p class="pmodal">Descripción:</p>
+            <textarea name="" id="" class="inmodal"></textarea>
+
+            <p class="pmodal">Área:</p>
+            <select class="semodal" id="area"></select>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal" onclick="irActividad()">Comenzar</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="barra">
+        <h2 class="titulo">Edutecno</h2>
+
+        <div class="cuenta flex">
+            <i class="fas fa-user-circle"></i>
+            <p>Fernanda Juárez Tirado</p>
+        </div>
+    </div>
+
+    <div class="wrapper" id="wrapper">
+        <div class="content col-xs-12" id="content">
+            <div class="contenedor">
+                <ol class="breadcrumb bread col-xs-12">
+                    <li><a>Español</a></li>
+                    <li><a>Lista de alumnos</a></li>
+                </ol>
+
+                <div class="col-xs-12 end flex nopadding">
+                    <button class="btmodal" data-toggle="modal" data-target="#myModal"><i class="fas fa-plus"></i> Agregar actividad</button>
+                </div>
+
+                <div class="col-xs-12 col-sm-5 col-md-5 alumno flex between" id="alumno">
+                    <h2>Jorge Luis Rojas Arco</h2>
+                    <i class="far fa-file" data-title="Actividades"></i>
+                </div>
+            </div>
+        </div>
+    </div>
     
 
 </body>
