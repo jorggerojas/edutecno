@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hackathon 2019</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Estilo -->
+	<link href="css/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/stylecon.css">
+	<!-- Js -->
+	<script src="js/jquery.min.js"></script>
+    <script src="css/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/function.js"></script>
+    <!-- Font -->
+    <link href="css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+</head>   
+<body>
+
+	<div class="barra">
+		<!-- <div class="img"></div> -->
+        <h2 class="titulo">Edutecno</h2>
+
+        <div class="flex">
+            <i class="fas fa-user-circle" onclick="desplegarSubmenu()"></i>
+        </div>
+    </div>
+
+    <div class="wrapper" id="wrapper">
+        
+
+        <div class="content col-xs-12" id="content">
+            <div class="contenedor">
+                
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#wrapper').toggleClass('active');
+                $('#sidebar').toggleClass('active');
+                $('#content').toggleClass('active');
+                $(this).toggleClass('active');
+            });
+        });
+    </script>
+
+</body>
+</html>
