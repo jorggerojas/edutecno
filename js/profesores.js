@@ -19,7 +19,7 @@ function iniciarSesion(){
     }
 }
 
-function getMaterias(){
+function getAllMaterias(){
     materiasXHR = new XMLHttpRequest();
     materiasXHR.open('GET', 'http://127.0.0.1:81/Hackathon2019/Materias/mostrarAllMateria');
     materiasXHR.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
@@ -31,7 +31,8 @@ function getMaterias(){
              for(var i = 0; i < materias.length ; i++){
                 //obtiene todas las materias, falta concatenar la variable al select
                 var opcionesMaterias = "<option value="+materias[i].NombreMateria+">"+materias[i].NombreMateria+"</option>";
-                console.log(opcionesMaterias);
+                document.getElementById('materia').innerHTML += opcionesMaterias;
+                //console.log(opcionesMaterias);
              }
         }
     }
@@ -45,7 +46,6 @@ function getGrupos(){
     gruposXHR.send();
     gruposXHR.onreadystatechange = function(){
         if(gruposXHR.readyState == 4 && gruposXHR.status == 200){
-            loclas
             //exito
         }
     }
