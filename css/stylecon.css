@@ -1,40 +1,29 @@
 :root{
+    --negro: #333333;
     --blanco: #FFFFFF;
     --vino: #750000;
     --mostaza: #FBBF33;
+    --fondo: #F1F3F2;
+    --naranja: #EE5A24;
+    --español: #5192CD;
+    --mate: #BF5582;
+    --lengua: #42599B;
+    --ciencias: #EDB125;
+    --historia: #F89C3D;
+    --geografia: #F3712A;
+    --formacion: #C65925;
 }
 
 *{
     padding: 0px;
     margin: 0px;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 body, html{
     width: 100%;
     height: auto;
 }
-
-/*SCROLL*/
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-::-webkit-scrollbar-button {
-  width: 0px;
-  height: 0px;
-}
-::-webkit-scrollbar-thumb {
-  background: #5d5d5d;
-  border: 0px none #ffffff;
-  border-radius: 0px;
-}
-::-webkit-scrollbar-track {
-  background: #b8b1b8;
-  border: 0px none #ffffff;
-  border-radius: 0px;
-}
-
 
 .altura{
     width: 100%;
@@ -81,7 +70,6 @@ body, html{
     top: 50px;
     float: left;
     position: relative;
-    background: var(--fondo);
     overflow-y: none !important;
 }
 
@@ -102,7 +90,7 @@ p, h1, h2, h3, h4{
     top: 0;
     left: 0;
     position: fixed;
-    background: var(--vino);
+    background: var(--naranja);
     padding: 5px;
     box-sizing: border-box;
     z-index: 9999;
@@ -122,10 +110,11 @@ p, h1, h2, h3, h4{
         margin-top: 12px !important;
         margin-bottom: 10px !important;
         margin-left: 10px !important;
-        font-size: 1.4em;
+        font-size: 1.2em;
         font-weight: 400;
         color: var(--blanco);
     }
+
 /*Sidebar*/
 #sidebar {
     max-width: 250px;
@@ -151,7 +140,6 @@ p, h1, h2, h3, h4{
     #sidebarCollapse{
         width: 25px;
         height: 25px;
-        background: var(--azul);
         cursor: pointer !important;
         float: left;
         position: relative;
@@ -188,6 +176,24 @@ p, h1, h2, h3, h4{
         border: none;
     }
 
+    .cuenta{
+        float: right;
+        height: 100%;
+        width: auto;
+        margin-right: 10px;
+        right: 10px;
+    }
+            .cuenta p{
+                color: var(--blanco);
+                font-size: 1em;
+                margin: 10px 0;
+            }
+            .cuenta i{
+                color: var(--blanco);
+                font-size: 1.6em;
+                border-radius: 50%;
+                margin-right: 5px;
+            }
 /*Contenido*/
 #content{
     width: 100%;
@@ -197,9 +203,10 @@ p, h1, h2, h3, h4{
     overflow-y: auto;
     transition: all 0.3s;
     padding: 10px;
-    padding-top: 20px;
+    padding-top: 25px;
     padding-bottom: 20px;
     box-sizing: border-box;
+    background: var(--fondo);
 }
     #content.active{
         width: 100%;
@@ -209,19 +216,116 @@ p, h1, h2, h3, h4{
         background: var(--blanco);
         float: left;
         position: relative;
-        padding: 10px;
-        padding-left: 20px;
-        padding-right: 20px;
-        box-sizing: border-box;
-        margin-bottom: 0px !important;
+        padding: 15px !important;
         min-height: 85vh;
-        width: 96%;
-        margin-left: 2%;
-        margin-right: 2%;
-        box-shadow: 1px 1px 9px -2px rgba(0,0,0,0.3);
-        border-radius: 10px;
+        width: 97%;
+        margin-left: 1.5%;
+        margin-right: 1.5%;
+        border-radius: 5px;
     }
-        .contenedor #tabla{
+        .contenedor h1{
+            margin-top: 0px !important;
+            font-size: 2em;
+            color: var(--negro);
+        }
+        .contenedor ol li a{
+            color: var(--naranja);
+            font-weight: 500;
+            cursor: default;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        .grupo{
+            height: 200px;
+            float: left;
+            position: relative;
+            margin-left: 6%;
+            margin-top: 10px;
+            border: 2px solid var(--fondo);
+            border-radius: 5px;
+            cursor: pointer;
+        }
+            .grupo:hover{
+                background: var(--fondo);
+                border: none !important;
+            }
+            .grupo p{
+                font-size: 2.5em;
+                color: var(--negro);
+            }
+        .materia{
+            height: 200px;
+            float: left;
+            position: relative;
+            margin-left: 6%;
+            margin-top: 20px;
+            border: 2px solid var(--fondo);
+            border-radius: 5px;
+            cursor: pointer;
+            overflow: hidden !important;
+            color: var(--negro);
+        }
+            .español{
+                border-bottom: 5px solid var(--español) !important;
+            }
+                .español:hover{
+                    background: var(--español);
+                    border: none !important;
+                }
+                .mate:hover{
+                    background: var(--mate);
+                    border: none !important;
+                }
+                .historia:hover{
+                    background: var(--historia);
+                    border: none !important;
+                }
+                .lengua:hover{
+                    background: var(--lengua);
+                    border: none !important;
+                }
+                .ciencias:hover{
+                    background: var(--ciencias);
+                    border: none !important;
+                }
+                .geografia:hover{
+                    background: var(--geografia);
+                    border: none !important;
+                }
+                .formacion:hover{
+                    background: var(--formacion);
+                    border: none !important;
+                }
+                .materia:hover{
+                    color: var(--blanco) !important;
+                }
+            .mate{
+                border-bottom: 5px solid var(--mate) !important;
+            }
+            .historia{
+                border-bottom: 5px solid var(--historia) !important;
+            }
+            .lengua{
+                border-bottom: 5px solid var(--lengua) !important;
+            }
+            .ciencias{
+                border-bottom: 5px solid var(--ciencias) !important;
+            }
+            .geografia{
+                border-bottom: 5px solid var(--geografia) !important;
+            }
+            .formacion{
+                border-bottom: 5px solid var(--formacion) !important;
+            }
+            .materia p{
+                font-size: 1.2em;
+                margin-top: 10px;
+            }
+            .materia img{
+                height: 90px;
+            }
+        /*.contenedor #tabla{
             margin: 10px 0;
             padding-right: 0px !important;
             padding-left: 0px !important;
@@ -245,7 +349,7 @@ p, h1, h2, h3, h4{
             }
             #tabla table tr:nth-child(even) {
                 background: #FCFCFC;
-            }
+            }*/
 
 
 @media (max-width: 768px) {
@@ -342,4 +446,20 @@ p, h1, h2, h3, h4{
             box-sizing: border-box;
             height: auto !important;
         }
+    /*Contenido*/
+    .grupo{
+        margin-left: 0% !important;
+    }
+    .materia{
+        margin-left: 0% !important;
+    }
+        .materia p{
+            font-size: 1.2em;
+        }
+}
+
+@media (max-width: 800px) {
+    .materia{
+        margin-left: 0% !important;
+    }
 }
