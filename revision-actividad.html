@@ -20,29 +20,6 @@
 </head>   
 <body onload="getMaterias()">
 
-    <div id="myModal" class="modal fade" role="dialog">
-      <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Agregar materia</h4>
-          </div>
-          <div class="modal-body">
-            <p>Seleccione la materia para agregar</p>
-            <select class="semodal" id="materia">
-                <option>Hola</option>
-            </select>
-          </div>
-          <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
     <div class="barra">
         <h2 class="titulo">Edutecno</h2>
 
@@ -56,12 +33,20 @@
         <div class="content col-xs-12" id="content">
             <div class="contenedor" id="materias">
                 <ol class="breadcrumb bread col-xs-12">
-                    <li><a>Grupos</a></li>
+                    <li><a>Promedio por materia</a></li>
                   <li><a id="grupo"></a></li>
                 </ol>
 
-                <div class="col-xs-12 end flex nopadding">
-                    <button class="btmodal" data-toggle="modal" data-target="#myModal" onclick="getAllMaterias()"><i class="fas fa-plus"></i> Agregar materia</button>
+                <div class="col-xs-12 between flex nopadding">
+                    <a onclick="goBack()" class="atras">< Regresar</a>
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-3 materia flex-vertical ciencias">
+                  <div class="verde circle2">
+                    <p>8</p>
+                  </div>
+                    <img src="img/ciencias.png">
+                    <p>Ciencias Naturales</p>
                 </div>
 
             </div>

@@ -32,7 +32,6 @@
           <div class="modal-body">
             <p>Seleccione la materia para agregar</p>
             <select class="semodal" id="materia">
-                <option>Hola</option>
             </select>
           </div>
           <div class="modal-footer">
@@ -60,7 +59,8 @@
                   <li><a id="grupo"></a></li>
 	            </ol>
 
-                <div class="col-xs-12 end flex nopadding">
+                <div class="col-xs-12 between flex nopadding">
+                    <a onclick="goBack()" class="atras">< Regresar</a>
                     <button class="btmodal" data-toggle="modal" data-target="#myModal" onclick="getAllMaterias()"><i class="fas fa-plus"></i> Agregar materia</button>
                 </div>
 

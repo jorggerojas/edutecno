@@ -15,6 +15,8 @@
     --verde: #5CED32;
     --rojo: #FA051E;
     --amarillo: #F8DA07;
+    --azuli:#1d617a;
+    --verdes: #52af5c;
 
 }
 
@@ -101,6 +103,13 @@ textarea::-webkit-outer-spin-button {
   margin: 0 !important; 
 }
 
+.atras{
+    color: rgba(0,0,0,.8) !important;
+    outline: none;
+    cursor: pointer !important;
+    text-decoration: none !important;
+}
+
 .modal{
     z-index: 99999999 !important;
 }
@@ -110,7 +119,7 @@ textarea::-webkit-outer-spin-button {
         padding: 5px;
         box-sizing: border-box;
         border-radius: 5px;
-        background: var(--naranja);
+        background: var(--azuli);
         color: var(--blanco);
         outline: none !important;
     }
@@ -168,7 +177,7 @@ textarea::-webkit-outer-spin-button {
     top: 0;
     left: 0;
     position: fixed;
-    background: var(--naranja);
+    background: var(--verdes);
     padding: 5px;
     box-sizing: border-box;
     z-index: 9999;
@@ -207,7 +216,7 @@ textarea::-webkit-outer-spin-button {
     right: 0;
     top: 50px;
     height: calc(100% - 50px);
-    background: var(--amarillo);
+    background: var(--azuli);
 }
     #sidebar.active{
         margin-left: -250px;
@@ -367,7 +376,7 @@ textarea::-webkit-outer-spin-button {
             color: var(--negro);
         }
         .contenedor ol li a{
-            color: var(--naranja);
+            color: var(--azuli);
             font-weight: 500;
             cursor: default;
             text-decoration: none;

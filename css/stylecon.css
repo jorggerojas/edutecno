@@ -15,7 +15,8 @@
     --verde: #5CED32;
     --rojo: #FA051E;
     --amarillo: #F8DA07;
-
+    --azuli:#1d617a;
+    --verdes: #52af5c;
 }
 
 *{
@@ -101,6 +102,13 @@ textarea::-webkit-outer-spin-button {
   margin: 0 !important; 
 }
 
+.atras{
+    color: rgba(0,0,0,.8) !important;
+    outline: none;
+    cursor: pointer !important;
+    text-decoration: none !important;
+}
+
 .modal{
     z-index: 99999999 !important;
 }
@@ -110,13 +118,13 @@ textarea::-webkit-outer-spin-button {
         padding: 5px;
         box-sizing: border-box;
         border-radius: 5px;
-        background: var(--naranja);
+        background: var(--azuli);
         color: var(--blanco);
         outline: none !important;
     }
     .semodal{
         height: 30px;
-        width: 50%;
+        width: 100%;
         border-radius: 5px;
         outline: none !important;
         cursor: pointer;
@@ -167,7 +175,7 @@ textarea::-webkit-outer-spin-button {
     top: 0;
     left: 0;
     position: fixed;
-    background: var(--naranja);
+    background: var(--verdes);
     padding: 5px;
     box-sizing: border-box;
     z-index: 9999;
@@ -308,7 +316,7 @@ textarea::-webkit-outer-spin-button {
             color: var(--negro);
         }
         .contenedor ol li a{
-            color: var(--naranja);
+            color: var(--azuli);
             font-weight: 500;
             cursor: default;
             text-decoration: none;
@@ -474,6 +482,23 @@ textarea::-webkit-outer-spin-button {
                 display:flex;
                 justify-content: center;
                 align-items: center;
+            }
+            .circle2{
+                border-radius: 50%;
+                width: 80px;
+                height: 80px;
+                padding: 20px;
+                font-weight: 400;
+                font-size: 2em;
+                color: var(--blanco);
+                position: fixed;
+                overflow: hidden !important;
+                display: flex;
+                justify-content: center;
+                align-content: center;
+                align-items: center;
+                margin-left: 140px;
+                margin-top: -80px;
             }
             
             .verde{
@@ -660,6 +685,10 @@ textarea::-webkit-outer-spin-button {
     }
     .mes{
         margin-left: 0% !important;
+    }
+    .circle2{
+        width: 50px;
+        height: 50px;
     }
 }
 

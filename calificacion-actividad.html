@@ -56,14 +56,15 @@
                     <li><a>Actividades</a></li>
                 </ol>
 
-                <div class="col-xs-12 end flex nopadding">
-                    <button class="btmodal" data-toggle="modal" data-target="#myModal" onclick="getAllMaterias()"><i class="fas fa-plus"></i> Agregar comentario</button>
+                <div class="col-xs-12 between flex nopadding">
+                    <a onclick="goBack()" class="atras">< Regresar</a>
+                    <button class="btmodal" data-toggle="modal" data-target="#myModal" onclick="getAllMaterias()"><i class="fas fa-plus"></i> Agregar comentarios</button>
                 </div>
 
                 <h1 id="titulo-act" class="titulo-act col-xs-12">Lectura rápida de 5 minutos</h1>
 
                 <div class="col-xs-12 col-sm-5 col-md-5 alumno flex between" id="alumno">
-                    <h2>Jorge Luis Rojas Arco</h2>
+                    <h2></h2>
                     <input type="number" max="2" placeholder="Calificación" onKeyDown="if(this.value.length==4) return false;">
                     <i class="far fa-comment" title="Comentario"></i>
                 </div>
