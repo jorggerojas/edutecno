@@ -12,8 +12,10 @@ function iniciarSesion() {
             if (loginXHR.responseText != '0') {
                 localStorage.setItem('idProfesor', JSON.parse(loginXHR.responseText).idProfesor);
                 localStorage.setItem('nombreProfesor', JSON.parse(loginXHR.responseText).Nombre + JSON.parse(loginXHR.responseText).Apellido);
-                
-                alert('Exito, ' + JSON.parse(loginXHR.responseText).Nombre);
+                //alert('Exito, ' + JSON.parse(loginXHR.responseText).Nombre);
+                window.location= ('grupos.html');
+            }else{
+                alert('Credenciales incorrectas');
             }
 
         }
@@ -137,10 +139,11 @@ function actividadesA(idA){
 
 function verActividades(){
     var alumno = localStorage.getItem('idAlumno');
-    var curso = localStorage.getItem('idCurso');
+    var materia = localStorage.getItem('idMateria');
+    var grupo = localStorage.getItem('idGrupo');
 
     actividadesXHR = new XMLHttpRequest();
-    actividadesXHR.open('GET', 'http://127.0.0.1:81/Hackathon2019/Actividades/getActividadMateria?idCurso='+curso+'&idAlumno='+alumno);
+    actividadesXHR.open('GET', 'http://127.0.0.1:81/Hackathon2019/Actividades/getActividadMateria?idGrupo='+grupo+'&idAlumno='+alumno+'&idMateria='+materia);
     actividadesXHR.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     actividadesXHR.send();
     
