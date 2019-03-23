@@ -1,6 +1,29 @@
-function inicioSesionP(){
-    var clave = document.getElementById('id');
+function iniciarSesionP(){
+    var clave = document.getElementById('clave').value;
+    var fecha = document.getElementById('nac').value;
+    var inicioXHR = new XMLHttpRequest();
+    console.log(fecha)
 
+    inicioXHR.open('POST', 'http://127.0.0.1:81/Hackathon2019/Padres/login');
+    inicioXHR.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    inicioXHR.send('idAlumno=' + clave + '&fechaNacimiento=' + fecha);
+    inicioXHR.onreadystatechange = function (){
+        if(inicioXHR.readyState == 4 && inicioXHR.status == 200){
+            //console.log(JSON.parse(inicioXHR.responseText));
+            var alumno = JSON.parse(inicioXHR.responseText);
+            if(alumno[0].idAlumno != 0){
+                //console.log(alumno[0].idCurso);
+                localStorage.setItem('idAlumno', alumno[0].idAlumno);
+                localStorage.setItem('idGrupo', alumno[0].idGrupo);
+                window.location = 'revision-actividad.html';
+
+            }else{
+               
+                alert('Credenciales no validas')
+            }
+
+        }
+    }
 }
 
 function materiasHijo(){
