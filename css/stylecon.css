@@ -471,6 +471,9 @@ textarea::-webkit-outer-spin-button {
                 font-weight: bold;
                 font-size: 3em;
                 color: var(--blanco);
+                display:flex;
+                justify-content: center;
+                align-items: center;
             }
             
             .verde{
