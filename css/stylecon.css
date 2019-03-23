@@ -495,6 +495,25 @@ textarea::-webkit-outer-spin-button {
                 float: left;
                 position: relative;
             }
+
+        .mes{
+            height: 200px;
+            float: left;
+            position: relative;
+            margin-left: 6%;
+            margin-top: 20px;
+            border: 2px solid var(--fondo);
+            border-radius: 5px;
+            cursor: pointer;
+            overflow: hidden !important;
+            color: var(--negro);
+            border-top: 15px solid var(--rojo);
+            overflow: hidden !important;
+            z-index: 9999;
+        }
+            .mes p{
+                font-size: 2.5em;
+            }
         /*.contenedor #tabla{
             margin: 10px 0;
             padding-right: 0px !important;
@@ -633,6 +652,9 @@ textarea::-webkit-outer-spin-button {
             font-size: .8em;
         }
     .actividad{
+        margin-left: 0% !important;
+    }
+    .mes{
         margin-left: 0% !important;
     }
 }

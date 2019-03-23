@@ -1,17 +1,33 @@
 :root{
-	--blanco: #F7F7F7;
-	--negro: #646464;
+    --negro: #333333;
+    --blanco: #FFFFFF;
+    --vino: #750000;
+    --mostaza: #FBBF33;
+    --fondo: #F1F3F2;
+    --naranja: #EE5A24;
+    --español: #5192CD;
+    --mate: #BF5582;
+    --lengua: #42599B;
+    --ciencias: #EDB125;
+    --historia: #F89C3D;
+    --geografia: #F3712A;
+    --formacion: #C65925;
+    --verde: #5CED32;
+    --rojo: #FA051E;
+    --amarillo: #F8DA07;
+
 }
 
 *{
 	padding: 0px;
 	margin: 0px;
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Roboto', sans-serif;
 }
 
 html, body{
 	width: 100%;
 	height: 100%;
+	cursor: default;
 }
 
 .height{
@@ -25,13 +41,6 @@ html, body{
 	padding-left: 0px !important;
 	padding-right: 0px !important;
 	height: 100%;
-	background-image: linear-gradient(
-		 rgba(0,0,0,.6),
-		 rgba(0,0,0,.6)
-		 ),
-		 url(../img/login.jpg);
-	background-repeat: no-repeat;
-	background-size: cover;
 }
 
 .no-padding{
@@ -47,36 +56,96 @@ html, body{
 	flex-direction: column;
 }
 
-/*Login profesores*/
-.logo{
-	height: 50px;
-	float: left;
-	position: relative;
-	line-height: 50px !important;
+.flex-vertical{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
 }
-	.logo>h3{
-		margin-bottom: 12px !important;
-		margin-top: 12px !important;
-		font-weight: 400;
-		color: var(--blanco);
+
+.start{
+    justify-content: flex-start !important;
+}
+
+.between{
+    justify-content: space-between;
+}
+
+.logo{
+		height: 50px;
 	}
+		.logo h3{
+			float: left;
+			position: relative;
+			font-weight: 300 !important;
+			margin-top: 15px;
+		}
+		.logo img{
+			height: 40px;
+			float: left;
+			position: relative;
+			margin-right: 10px;
+			margin-top: 5px;
+		}
 
 .tipo{
 	float: left;
 	position: relative;
 	height: calc(100% - 50px);
-	color: var(--blanco);
+	background-size: cover;
+	background-image: linear-gradient(
+		 rgba(238,90,36,.9),
+		 rgba(238,90,36,.9)
+		 ),
+		 url(../img/pat.jpg);
 }
-	.tipo>h1{
-		margin-left: 50px;
+.tipo2{
+	float: left;
+	position: relative;
+	height: 50px;
+	background-size: cover;
+	background-image: linear-gradient(
+		 rgba(238,90,36,.9),
+		 rgba(238,90,36,.9)
+		 ),
+		 url(../img/pat.jpg);
+}
+
+	.tipo h1{
 		font-weight: 300;
+		font-size: 1.2em;
+		float: left;
+		position: relative;
+		color: var(--blanco);
 	}
-	.tipo>p{
-		margin-left: 50px;
+	.tipo p{
+		color: var(--blanco);
+		margin: 10px 0;
 	}
 
 .datos{
 	float: left;
 	position: relative;
 	height: calc(100% - 50px);
+	padding: 20px;
+	box-sizing: border-box;
 }
+	.datos p{
+		font-size: 1.2em;
+		margin: 10px 0;
+	}
+	.datos h1{
+		font-weight: 300;
+		font-size: 1.2em;
+		float: left;
+		position: relative;
+		color: var(--negro);
+	}
+	.datos input, .tipo input{
+		border-bottom: 1px solid var(--naranja) !important;
+		border: none;
+		padding: 2px;
+		box-sizing: border-box;
+		outline: none;
+	}
