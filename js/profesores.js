@@ -79,7 +79,7 @@ function getMaterias(idG) {
             console.log(materias)
           
             for(var i = 0 ; i < materias.length; i ++ ){
-                var materia =  '<div class="col-xs-12 col-sm-12 col-md-3 materia flex-vertical español" onclick="alumnoMateria()">'+
+                var materia =  '<div class="col-xs-12 col-sm-12 col-md-3 materia flex-vertical español" onclick="alumnoMateria('+materias[i].idMateria+')">'+
                 '<img src="'+materias[i].Media+'">'+
                 '<p>'+materias[i].NombreMateria+'</p>'+
            ' </div>';
@@ -93,4 +93,37 @@ function getMaterias(idG) {
 function pMateria(idG){
     localStorage.setItem('idGrupo', idG);
     window.location = 'materia.html';
+}
+
+function alumnoMateria(idM){
+    localStorage.setItem('idMateria', idM );
+    window.location = ('alumnos-materia.html');
+}
+
+function getAlumnosMateria(){
+    var idP = localStorage.getItem('idProfesor');
+    var idG = localStorage.getItem('idGrupo');
+    var idM = localStorage.getItem('idMateria');
+    
+    materiasAlumnosHXR = new XMLHttpRequest();
+    materiasAlumnosHXR.open('GET', 'http://127.0.0.1:81/Hackathon2019/Alumnos/getAlumnosMaterias?idProfesor=' + idP + '&idGrupo=' + idG+'&idMateria='+ idM);
+    materiasAlumnosHXR.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    materiasAlumnosHXR.send();
+    console.log('alumno');
+    materiasAlumnosHXR.onreadystatechange= function(){
+        if (materiasAlumnosHXR.status == 200 && materiasAlumnosHXR.readyState == 4){
+            
+            var alumnos = JSON.parse(materiasAlumnosHXR.responseText);
+
+            for(var i = 0; i<alumnos.length; i++){
+                var alumno =  '<div class="col-xs-12 col-sm-5 col-md-5 alumno flex between" id="alumno">'+
+                '<h2>'+alumnos[i].Nombre+' '+alumnos[i].Apellidos+'</h2>'+
+               ' <i class="far fa-file" data-title="Actividades"></i>'+
+            '</div>';
+            
+                document.getElementById('alumnos').innerHTML += alumno;
+            }
+        }
+    }
+
 }
